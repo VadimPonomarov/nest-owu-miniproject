@@ -1,0 +1,1 @@
+export * from './doctor_service.entity'

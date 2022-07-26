@@ -1,0 +1,29 @@
+.container-main {
+  margin: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  & mat-chip {
+    display: flex;
+    background: rgb(103, 58, 183);
+    max-width: 150px;
+    justify-content: center;
+    color: white;
+
+    &.active {
+      color: yellow;
+    }
+
+    &:hover {
+      box-shadow: 4px 4px 4px yellow;
+    }
+  }
+
+}
+
+div.row {
+  display: flex;
+  justify-content: center;
+}

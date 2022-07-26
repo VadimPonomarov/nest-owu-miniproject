@@ -1,0 +1,19 @@
+<mat-toolbar color="primary">
+  <span>
+    <button mat-icon-button>
+      <mat-icon (click)="toggleShowDrawer()">menu</mat-icon>
+    </button>
+    <span>My App</span>
+  </span>
+  <div class="display">
+    <app-menu *ngIf="!_showDrawer"></app-menu>
+  </div>
+</mat-toolbar>
+
+<ng-container *ngIf="_showLoader">
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</ng-container>
+
+<router-outlet></router-outlet>
+
+

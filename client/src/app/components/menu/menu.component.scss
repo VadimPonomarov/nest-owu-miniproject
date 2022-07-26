@@ -1,0 +1,51 @@
+button {
+  font-size: 20px;
+  color: white;
+  border: none;
+  background: none;
+
+  &[mat-menu-item] {
+    color: blue;
+    font-size: 14px;
+    width: 100%;
+  }
+
+  &[disabled] {
+    opacity: .5;
+  }
+
+  &[mat-button]:hover {
+    color: yellow;
+  }
+}
+
+.menu-container {
+  display: flex;
+  justify-content: left;
+  max-width: 400px;
+  padding: 0;
+  margin: 0;
+
+  & button {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+    padding: 2px;
+    border: none;
+  }
+}
+
+li {
+  list-style: none;
+  width: 100%;
+}
+
+a {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  max-height: 30px;
+
+}
