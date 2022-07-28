@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"npm run prisma:clear-migrations --prefix server\" \"rimraf dist --prefix server\" \"npm run start:dev --prefix server\" \"npm run prisma:generate --prefix server\" \"npm run prisma:migrate --prefix server\" \"npm run prisma:seed --prefix server\" \"npm run start --prefix client\"",
+    "start": " \"npm install --prefix ./client && npm install --prefix ./server && npm install && npm run next\"",
+    "next": "concurrently \"npm run prisma:clear-migrations --prefix server\" \"rimraf dist --prefix server\" \"npm run start:dev --prefix server\" \"npm run prisma:generate --prefix server\" \"npm run prisma:migrate --prefix server\" \"npm run prisma:seed --prefix server\" \"npm run start --prefix client\"",
     "next-start": "concurrently \"npm run start:dev --prefix server\" \"npm run start --prefix client\""
   },
   "repository": {
