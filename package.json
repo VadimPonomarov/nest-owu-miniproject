@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "first-start": "concurrently \"npm run prisma:clear-migrations --prefix server\" \"rimraf dist --prefix server\" \"npm run start:dev --prefix server\" \"npm run prisma:generate --prefix server\" \"npm run prisma:migrate --prefix server\" \"npm run prisma:seed --prefix server\" \"npm run start --prefix client\"",
+    "start": "concurrently \"npm run prisma:clear-migrations --prefix server\" \"rimraf dist --prefix server\" \"npm run start:dev --prefix server\" \"npm run prisma:generate --prefix server\" \"npm run prisma:migrate --prefix server\" \"npm run prisma:seed --prefix server\" \"npm run start --prefix client\"",
     "next-start": "concurrently \"npm run start:dev --prefix server\" \"npm run start --prefix client\""
   },
   "repository": {
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/VadimPonomarov/nest-owu-miniproject/issues"
   },
-  "homepage": "https://github.com/VadimPonomarov/nest-owu-miniproject#readme"
+  "homepage": "https://github.com/VadimPonomarov/nest-owu-miniproject#readme",
+  "dependencies": {
+    "concurrently": "^7.3.0"
+  }
 }
