@@ -1,23 +1,27 @@
-First application start:
-    > npm run install:node_modules
-    > npm run start
+You should have Docker-Desctop installed and running
 
-Next application start:
-    > npm run start
+Before first application start:
+> npm run install:node_modules
+
+Application start:
+> npm run start
 
 Stop application:
-    > npm run stop
+> npm run stop
 
 Restart application
-    > npm run restart
+> npm run restart
 
 Rebuild application:
-    > npm run rebuild
+> npm run rebuild
 
 __________________________________
 
 Api documentation:
-    http://localhost:3001/api
+http://localhost:3001/api
+
+DB administration:
+http://localhost:8080
 
 ___________________________________
 
