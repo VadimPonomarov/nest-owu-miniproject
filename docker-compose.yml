@@ -1,0 +1,36 @@
+services:
+  api:
+    build: ./server
+    container_name: api
+    restart: always
+    depends_on:
+      - pg
+    ports:
+      - 3001:3001
+
+  pg:
+    image: postgres
+    container_name: pg
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: postgres
+    ports:
+      - 5432:5432
+
+  adminer:
+    image: adminer
+    container_name: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+  ws:
+    image: nginx:latest
+    restart: always
+    volumes:
+      - ./client/dist/client:/usr/share/nginx/html
+      - ./client/nginx.conf:/etc/conf.d/default.conf
+    ports:
+      - 80:80

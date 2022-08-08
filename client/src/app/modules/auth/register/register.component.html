@@ -1,0 +1,56 @@
+<div class="main-div">
+  <form [formGroup]="form" class="border p-5" (submit)="handleSubmit()">
+    <h4>Форма регистрации пользователя</h4>
+    <div>
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Ваш Nickname</mat-label>
+          <input formControlName="name" matInput>
+          <mat-icon *ngIf="!form.get('name')?.errors" matSuffix>
+            sentiment_very_satisfied
+          </mat-icon>
+          <mat-hint *ngIf="form.get('name')?.errors">Введите свой Nickname (от 2 до 10 символов)</mat-hint>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Ваш email</mat-label>
+          <input formControlName="email" matInput>
+          <mat-icon *ngIf="!form.get('email')?.errors" matSuffix>
+            sentiment_very_satisfied
+          </mat-icon>
+          <mat-hint *ngIf="form.get('email')?.errors">Введите свой email</mat-hint>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Ваш password</mat-label>
+          <input type="password" formControlName="password" matInput>
+          <mat-icon *ngIf="!form.get('password')?.errors" matSuffix>
+            sentiment_very_satisfied
+          </mat-icon>
+          <mat-hint *ngIf="form.get('password')?.errors">Введите свой password</mat-hint>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Подтвердите password</mat-label>
+          <input type="password" formControlName="confirmPassword" matInput>
+          <mat-icon *ngIf="!form.get('confirmPassword')?.errors && !form.getError('notSame')" matSuffix>
+            sentiment_very_satisfied
+          </mat-icon>
+          <mat-hint *ngIf="form.get('confirmPassword')?.errors">Подтвердите свой password</mat-hint>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <button mat-stroked-button type="submit" [disabled]="!form.valid">Отправить</button>
+      </div>
+
+    </div>
+  </form>
+</div>
+

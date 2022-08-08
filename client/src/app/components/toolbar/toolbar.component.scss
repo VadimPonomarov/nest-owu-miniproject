@@ -1,0 +1,19 @@
+.mat-toolbar {
+  display: flex;
+}
+
+div {
+  display: flex;
+  width: 100%;
+  justify-content: right;
+}
+
+mat-progress-bar {
+  margin: 5px 0;
+}
+
+@media all and (max-width: 700px) {
+  .display {
+    display: none;
+  }
+}

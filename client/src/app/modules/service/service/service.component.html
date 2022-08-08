@@ -1,0 +1,32 @@
+<mat-chip-list class="mat-chip-list-stacked" aria-label="Clinic services">
+  <div class="container-main">
+    <mat-chip [id]="('chip-'+item.id)" *ngFor="let item of my_services" class="active"
+              (click)="handleClick($event,item)">
+      {{item.name}}
+    </mat-chip>
+  </div>
+</mat-chip-list>
+
+
+<ng-container *ngIf="items">
+  <ng-container *ngFor="let item of items">
+    <mat-accordion>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <div class="row">
+              <h2>{{item[0]}}</h2>
+            </div>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <h3>Doctors: </h3>
+        <ng-container *ngFor="let i of item[1]">
+          <div class="row">
+            <h4>{{i['doctor']}}</h4>
+          </div>
+        </ng-container>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </ng-container>
+</ng-container>

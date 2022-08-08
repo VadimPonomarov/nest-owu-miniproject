@@ -1,0 +1,26 @@
+{
+  "name": "nest-owu-miniproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install:node_modules": "npm install --prefix client",
+    "start": "npm run build --prefix client && docker-compose up --build",
+    "stop": "docker-compose down && docker system prune",
+    "restart": "docker-compose up",
+    "rebuild": "npm run stop && docker-compose up  --build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VadimPonomarov/nest-owu-miniproject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VadimPonomarov/nest-owu-miniproject/issues"
+  },
+  "dependencies": {
+    "concurrently": "^7.3.0"
+  },
+  "homepage": "https://github.com/VadimPonomarov/nest-owu-miniproject#readme"
+}

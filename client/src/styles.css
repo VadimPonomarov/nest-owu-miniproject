@@ -1,0 +1,20 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+button {
+    margin: 0 5px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.visible {
+    display: none;
+}

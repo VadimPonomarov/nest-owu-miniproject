@@ -1,0 +1,29 @@
+<ng-container *ngFor="let item of menuItems">
+  <div *ngIf="item.children; else alternative">
+    <button mat-button [matMenuTriggerFor]="menu" [routerLink]="[item.name.toLowerCase()]" [disabled]="item.url === ''">
+      <mat-icon>{{item.icon}}</mat-icon>
+      {{item.name}}
+    </button>
+  </div>
+
+  <mat-menu #menu="matMenu" yPosition="below">
+    <ul class="container" *ngFor="let child of item.children">
+      <li [id]="['sm', child.name.toLowerCase()].join('-')">
+        <mat-icon>{{child.icon}}</mat-icon>
+        <a mat-menu-item [routerLink]="[item.url, child.url]" (click)="handleClick()">
+          {{child.name}}
+        </a>
+      </li>
+    </ul>
+  </mat-menu>
+
+  <ng-template #alternative>
+    <ng-container>
+      <button mat-button [routerLink]="[item.name.toLowerCase()]" [disabled]="item.url === ''">
+        <mat-icon>{{item.icon}}</mat-icon>
+        {{item.name}}
+      </button>
+    </ng-container>
+  </ng-template>
+
+</ng-container>
